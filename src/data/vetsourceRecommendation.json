@@ -1,0 +1,114 @@
+{
+  "petId": 48291,
+  "petWeight": 24.5,
+  "speciesType": "DOG",
+  "bodyConditionalScore": 6,
+  "productCodeSaveRecoRequest": "RI14W",
+  "rciRecoId": "rci-7f3a2b19-ec44-4d1e-b901-abc123def456",
+  "rcidId": 1,
+  "recommendationId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "rxcartitemId": 903847,
+  "getRecommendationRequest": {
+    "weight": 24.5,
+    "weightUnitType": "lb",
+    "speciesType": "DOG",
+    "birthDate": "2019-03-15",
+    "mixFeeding": false,
+    "bcs": 6,
+    "gender": "M",
+    "lifestyle": "INDOOR",
+    "breed": "Labrador Retriever",
+    "neutered": "YES",
+    "pathologyCodes": [
+      {
+        "code": "OB",
+        "label": "Overweight"
+      }
+    ]
+  },
+  "getRecommendationResponse": {
+    "recommendationBeanList": [
+      {
+        "formula": "RI14W",
+        "formulaNote1": "Satiety Support Weight Management",
+        "compositionText": "Chicken, Brown Rice, Oat Groats...",
+        "ration": {
+          "kcalPerDay": 674,
+          "gramsPerDay": 185,
+          "ibw": 22
+        },
+        "energy": {
+          "label": "Caloric Content",
+          "value": 3640,
+          "unit": "kcal/kg",
+          "name": "Metabolizable Energy",
+          "imageUrl": "",
+          "orderPriority": 1
+        },
+        "guaranteedAnalysis": [
+          {
+            "name": "Crude Protein",
+            "unit": "%",
+            "value": 30,
+            "orderPriority": 1
+          },
+          {
+            "name": "Crude Fat",
+            "unit": "%",
+            "value": 10,
+            "orderPriority": 2
+          },
+          {
+            "name": "Crude Fiber",
+            "unit": "%",
+            "value": 10.6,
+            "orderPriority": 3
+          }
+        ],
+        "claims": [
+          {
+            "category": "Weight",
+            "group": "BENEFIT",
+            "claim": "Helps achieve and maintain ideal weight",
+            "image_url": "",
+            "pathology_code": "OB",
+            "displayPriority": 1
+          }
+        ],
+        "pathologies": [
+          "OB"
+        ],
+        "nutritionData": [],
+        "percentageDetails": [],
+        "compBrutImage": ""
+      }
+    ]
+  },
+  "confirmRecommendationRequest": {
+    "weight": 24.5,
+    "weightUnitType": "lb",
+    "birthDate": "2019-03-15",
+    "bcs": 6,
+    "gender": "M",
+    "speciesType": "DOG",
+    "breed": "Labrador Retriever",
+    "neutered": "YES",
+    "pathologyCodes": [
+      {
+        "code": "OB",
+        "label": "Overweight"
+      }
+    ],
+    "clinicName": "Sunrise Veterinary Clinic",
+    "petName": "Biscuit",
+    "productCode": "RI14W",
+    "rationing": 185,
+    "energyValue": 674,
+    "nextVisitDate": "2026-07-15",
+    "petOwnerLanguage": "en"
+  },
+  "confirmRecommendationResponse": {
+    "rciRecoId": "rci-7f3a2b19-ec44-4d1e-b901-abc123def456",
+    "recommendationId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+  }
+}

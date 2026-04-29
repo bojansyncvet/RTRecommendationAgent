@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(npm install -g azure-functions-core-tools@4 2>&1)"
+    ]
+  }
+}
