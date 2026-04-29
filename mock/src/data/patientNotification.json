@@ -1,0 +1,66 @@
+{
+        "Data": {
+                "PimsId": "9",
+                "PrimaryClientId": "9",
+                "Name": "Daisy",
+                "SpeciesCode": "CANINE",
+                "SpeciesDescription": "Canine",
+                "BreedCode": "PIT",
+                "BreedDescription": "Pitbull",
+                "ColorCode": null,
+                "ColorDescription": null,
+                "GenderCode": "F",
+                "GenderDescription": "Female",
+                "DateOfBirth": "2023-06-26T00:00:00",
+                "DateOfDeath": null,
+                "PimsIsDeceased": null,
+                "IsDeceased": false,
+                "FlaggedInactive": false,
+                "EnteredDate": "2025-06-25T00:00:00",
+                "CurrentWeight": 18,
+                "CurrentWeightUnit": "",
+                "SuspendReminders": false,
+                "Notes": "",
+                "SoftDeleted": false,
+                "ClientPatientRelationships": [
+                        {
+                                "Type": "Owner",
+                                "ClientId": "9",
+                                "ClientPimsId": "9",
+                                "PatientId": "9",
+                                "PatientPimsId": "9",
+                                "IsPrimary": true,
+                                "Percentage": 100,
+                                "StartDate": null,
+                                "EndDate": null,
+                                "Id": "9|9",
+                                "IsDeleted": null
+                        }
+                ],
+                "PatientIdentifiers": [
+                        {
+                                "PatientId": "9",
+                                "Type": "Microchip",
+                                "SubType": null,
+                                "Date": null,
+                                "Identifier": "3333SDFSDF",
+                                "Id": "9|microchip",
+                                "IsDeleted": null
+                        }
+                ],
+                "PatientAlerts": [],
+                "PatientAttributes": [],
+                "SiteId": "0",
+                "Id": "9",
+                "IsDeleted": false
+        },
+        "EntityName": "Patient",
+        "VetSourcePracticeId": "50000035",
+        "PracticeId": "777101",
+        "SyncVetId": "51b14507-7ba4-4666-84aa-768326ff31f6",
+        "DataSourceName": "avimark",
+        "OriginalDataSourceName": null,
+        "UtcOffset": "UTC+0",
+        "WebhookNotificationId": "c8a8dfd6-33a0-468e-88f9-96baf8386230",
+        "ExternalPracticeId": "5000"
+}
