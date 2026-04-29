@@ -112,9 +112,10 @@ export interface WeightAssessment {
 }
 
 export interface RecommendationResponse {
+  data?: { url: string };
+  error?: string | null;
   recommended: boolean;
   reason?: string;
-  recommendationUrl?: string;
   assessment?: WeightAssessment;
   products?: CatalogProduct[];
   filteredOut?: {

@@ -28,6 +28,7 @@ export async function patientRecommendationHandler(
 
   const {
     Id: patientId,
+    PimsId: pimsId,
     PrimaryClientId: clientId,
     Name: patientName,
     SpeciesCode,
@@ -117,11 +118,12 @@ export async function patientRecommendationHandler(
 
   // ── 7. Build recommendation URL ──────────────────────────────────────────
   const productIds = newProducts.map((p) => p.productId).join(',');
-  const recommendationUrl = buildRecommendationUrl({ clientId, patientId, productIds });
+  const recommendationUrl = buildRecommendationUrl(pimsId);
 
   return jsonResponse(200, {
+    data: { url: recommendationUrl },
+    error: null,
     recommended: true,
-    recommendationUrl,
     assessment,
     products: newProducts,
     filteredOut: {
@@ -153,14 +155,11 @@ function resolveWeightKg(weight: number, unit: string): number {
   return weight * 0.453592; // lbs → kg
 }
 
-function buildRecommendationUrl(params: { clientId: string; patientId: string; productIds: string }): string {
-  const base = process.env.VETSOURCE_RECOMMENDATIONS_BASE_URL ?? 'https://vetsource.com/recommendations';
-  const qs = new URLSearchParams({
-    clientId:  params.clientId,
-    patientId: params.patientId,
-    products:  params.productIds,
-  });
-  return `${base}?${qs.toString()}`;
+function buildRecommendationUrl(pimsId: string): string {
+  const base =
+    process.env.RECOMMENDATION_POPUP_BASE_URL ??
+    'https://app.superblocks.com/code-mode/applications/61b06cfd-b320-4a6b-8744-0bb81ccbcbd2/realtime';
+  return `${base}/${pimsId}`;
 }
 
 function jsonResponse(status: number, body: unknown): HttpResponseInit {
@@ -174,7 +173,7 @@ function jsonResponse(status: number, body: unknown): HttpResponseInit {
 // ── Register ──────────────────────────────────────────────────────────────────
 app.http('patientRecommendation', {
   methods: ['POST'],
-  authLevel: 'function',
+  authLevel: 'anonymous',
   route: 'recommendations/patient',
   handler: patientRecommendationHandler,
 });
