@@ -14,7 +14,7 @@ export async function patientRecommendationHandler(
   // ── 1. Parse request body ────────────────────────────────────────────────
   let notification: PatientNotification;
   try {
-    notification = (await request.json()) as PatientNotification;
+    notification = normalizePascalKeys(await request.json()) as PatientNotification;
   } catch {
     return jsonResponse(400, { error: 'Invalid JSON in request body' });
   }
@@ -134,6 +134,19 @@ export async function patientRecommendationHandler(
 }
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
+
+function normalizePascalKeys(obj: unknown): unknown {
+  if (Array.isArray(obj)) return obj.map(normalizePascalKeys);
+  if (obj !== null && typeof obj === 'object') {
+    return Object.fromEntries(
+      Object.entries(obj as Record<string, unknown>).map(([k, v]) => [
+        k.charAt(0).toUpperCase() + k.slice(1),
+        normalizePascalKeys(v),
+      ])
+    );
+  }
+  return obj;
+}
 
 function mapSpeciesCode(code: string): Species {
   switch (code.toUpperCase()) {
